@@ -1,6 +1,11 @@
 .App {
   text-align: center;
+  display:grid;
+
 }
+
+
+
 
 .App-logo {
   height: 40vmin;
@@ -35,4 +40,12 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.negative-amount{
+  color: red;
+}
+.positive-amount{
+  color: green;
 }
