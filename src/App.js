@@ -7,6 +7,10 @@ import Axios from 'axios';
 import Transactions from './Components/Transactions'
 import Operations from './Components/Operations'
 import Categories from './Components/Categories';
+import Nav from 'react-bootstrap/Nav';
+import NavBar from 'react-bootstrap/Navbar'
+
+
 
 
 class App extends Component {
@@ -21,6 +25,7 @@ class App extends Component {
     if (this.state) {
       let balance = 0
       this.state.transactions.forEach(t => balance += Number(t.amount))
+      console.log()
       return balance
     }
   }
@@ -37,15 +42,14 @@ class App extends Component {
 
   postTransaction = async (newTransaction) => {
     const tempTransactions = [...this.state.transactions]
-    console.log("newTransaction", newTransaction)
     const transactionModel = await Axios({
       method: 'post',
       url: 'http://localhost:3001/transaction',
       data: newTransaction
     });
     tempTransactions.push(transactionModel.data)
-    await this.setState({ transactions: tempTransactions })
-    console.log(this.state.transactions)
+    await this.setState({ transactions: tempTransactions }, function () {
+    })
   }
 
   deleteTranaction = async (transaction) => {
@@ -58,19 +62,37 @@ class App extends Component {
   }
 
   render() {
+      const balance = this.calcBalance()
     return (
       <Router>
 
-        <div >
-          {this.state.transactions ?
+        <div className="App ">
+          <NavBar variant="pills"  >
+            <Nav className="nav-bar" fill={true}>
+              <Nav.Item>
+                <Nav.Link class ="nav-link" id="left" href="/">Transactions</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link class ="nav-link" id="middle" href="/categorized">Categories</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link class ="nav-link" id="right" href="/operations">Operations</Nav.Link>
+              </Nav.Item>
+            </Nav>
+          </NavBar>
+          {this.state.transactions && (
             <div>
-              <div>Your balance is: {this.calcBalance()}</div>
+              {balance>500?
+              <div id="balance" className="high-balance" >Your balance is: {balance}</div>
+              :<div id="balance" className="low-balance" >Your balance is: {balance}</div>
+              }
               <Route exact path='/' render={() => <Transactions transactions={this.state.transactions} deleteTranaction={this.deleteTranaction} />} />
               <Route exact path='/operations' render={() => <Operations withdrawTransaction={this.withdrawTransaction} postTransaction={this.postTransaction} />} />
               <Route exact path='/categorized' render={() => <Categories transactions={this.state.transactions} />} />
             </div>
-            : null}
+          )}
         </div>
+
       </Router>
     );
   }

@@ -31,12 +31,14 @@ router.post('/transaction',async function (req, res) {
     })
     await t.save()
     res.send(t)
+
 })
 
 router.delete(`/transaction`, async function (req, res) {
     const id = req.query.id 
     await Transaction.findByIdAndDelete(id, function (err) {
         if (err) console.log(err);
+        res.send('ok')
     })
 })
 

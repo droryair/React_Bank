@@ -4,6 +4,7 @@ import Transaction from './Transection'
 import * as ReactBootStrap from 'react-bootstrap'
 
 
+
 class Transactions extends Component {
   constructor() {
     super()
@@ -14,13 +15,11 @@ class Transactions extends Component {
   }
   render() {
     return (
-      <div className="App">
-        <Link to='/operations'>Operations</Link>
-        <Link to = '/categorized'>Categories</Link>
-        <ReactBootStrap.Table striped bordered hover>
+      <div className="App container">
+        <ReactBootStrap.Table striped bordered hover className="table">
           <thead>
-            <tr>
-              <th>Amount</th>
+            <tr className='table-header'>
+              <th >Amount</th>
               <th>Category</th>
               <th>Vendor</th>
               <th>Delete</th>

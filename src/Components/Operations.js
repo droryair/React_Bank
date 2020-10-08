@@ -1,22 +1,23 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button';
+
+
 
 class Operations extends Component {
   constructor() {
     super()
     this.state = {
-
       amount: '',
       category: '',
       vendor: '',
       toRedirect: false
-
-
     }
   }
-  updateState = (e) => {
+  updateState = async (e) => {
     const target = e.target
-    this.setState({ [target.name]: target.value })
+    await this.setState({ [target.name]: target.value })
   }
 
   postTransaction = async (toWithdraw) => {
@@ -25,10 +26,9 @@ class Operations extends Component {
     }
     await this.props.postTransaction(this.state)
     console.log("Operations state", this.state)
-    await this.clearInputs()
-    await this.setState({ toRedirect: true })
+     this.clearInputs()
+     this.setState({ toRedirect: true })
   }
-
 
   clearInputs = async () => {
     await this.setState({
@@ -40,20 +40,22 @@ class Operations extends Component {
 
   render() {
     return (
-      <div>
-         <div> <Link to='/'>Transactions</Link> </div> 
-          <Link to = '/categorized'>Categories</Link>
-
+      <div className="App">
         {this.state.toRedirect ?
           <Redirect to={'/'} />
           :
-          <div >
-            <input type='number' name="amount" value={this.state.amount} onChange={this.updateState} placeholder="ex. 100"></input>
-            <input name="category" value={this.state.category} onChange={this.updateState} placeholder="ex. Education"></input>
-            <input name="vendor" value={this.state.vendor} onChange={this.updateState} placeholder="ex. Elevation"></input>
-            <button onClick={() => this.postTransaction(false)}>Deposit</button>
-            <button onClick={() => this.postTransaction(true)} >Withdraw</button>
+          <div id="op-card">
+            
+
+            <input className="input" type='number' name="amount" value={this.state.amount} onChange={this.updateState} placeholder="ex. 100"></input>
+            <input className="input" name="category" value={this.state.category} onChange={this.updateState} placeholder="ex. Education"></input>
+            <input className="input" name="vendor" value={this.state.vendor} onChange={this.updateState} placeholder="ex. Elevation"></input> 
+            
+            <Button  id="link-wise" onClick={async() => await this.postTransaction(false)}>Deposit</Button>
+            <Button  id="link-wise" onClick={async() => await this.postTransaction(true)} >Withdraw</Button>
+
           </div>
+
         }
       </div>
     );

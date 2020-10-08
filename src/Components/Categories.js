@@ -1,22 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Category from './Category';
-import Transaction from './Transection'
 import * as ReactBootStrap from 'react-bootstrap'
 
 
 
 class Categories extends Component {
-  constructor() {
-    super()
-    this.state = {
-        categories:''
-    }
-  }
 
+  initCategories () {
 
-  async componentWillReceiveProps(nextProps){
-      const transactions = nextProps.transactions
+    const transactions = this.props.transactions
       let categoriesObj = {}
     transactions.forEach(t => {
 
@@ -27,27 +20,20 @@ class Categories extends Component {
       }
   })
     const categoriesArr=Object.values(categoriesObj)
-    await this.setState({categories:categoriesArr})
+    return categoriesArr
   }
-  
-  reload=()=>{
-    window.location.reload()
-  }
+
+
 
   render() {
-    const categories = this.state.categories
+    const categories = this.initCategories()
     return (
-      <div className="App">
-
-        <Link to='/'>Transactions</Link>
-        <Link to='/operations'>Operations</Link>
-        <p>Don't see anything? try <button onClick={this.reload}>Reloading</button></p>
-        {categories ?
-          <ReactBootStrap.Table striped bordered hover>
+      <div className="App container">
+          <ReactBootStrap.Table striped bordered hover className="table">
             <thead>
-              <tr>
-                <th>Category</th>
+              <tr className='table-header'>
                 <th>Sum</th>
+                <th>Category</th>
               </tr>
             </thead>
             <tbody>
@@ -56,7 +42,6 @@ class Categories extends Component {
               )}
             </tbody>
           </ReactBootStrap.Table>
-          : null}
       </div>
     );
   }

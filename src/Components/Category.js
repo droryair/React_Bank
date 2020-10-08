@@ -12,11 +12,14 @@ class Category extends Component {
         const c = this.props.category
         return (
             <tr >
-                <td>{c.category}</td>
-                <td>{c.sum}</td>
+                {c.sum<0?
+                <td className="negative-amount table-item amount">${c.sum}</td>
+                :<td className="positive-amount table-item amount">${c.sum}</td>
+                }
+                <td className='table-item'>{c.category}</td>
             </tr>
         )
     }
 }
 
-export default Category;
+export default Category
