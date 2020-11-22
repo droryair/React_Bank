@@ -103,8 +103,8 @@ a:visited{
 }
 
 #op-card{
-  width:300px;
-  height:300px;
+  width:350px;
+  height: 300px;
   background-color:#0F315E ;
   display: inline-block;
   padding-top:40px;
@@ -112,6 +112,22 @@ a:visited{
   -webkit-box-shadow: 3px 3px 5px 6px #ccc;  
   -moz-box-shadow:    3px 3px 5px 6px #ccc;
 }
+.op-input-name{
+  color: white;
+  display:inline-block;
+}
+.amount-in{
+  margin-right:0.5em;
+
+}
+.category-in{
+  margin-right:0.2em;
+
+}
+.vendor-in{
+  margin-right:1.2em;
+}
+
 .input{
   margin:10px;
 }
