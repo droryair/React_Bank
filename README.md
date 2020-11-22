@@ -1,68 +1,43 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A self- inserted transactions app. This app will allow you to track exactly the expenses and income you want, and will sort them by categories for you.
 
-## Available Scripts
+![react-bank gif](https://i.giphy.com/media/XDtLnnUdVe3x3BhbgX/giphy.webp)
 
-In the project directory, you can run:
+________________________________________________________________
+- :computer:The Technologies I used for this project:
+<img alt="JS Logo" src="https://www.vitoshacademy.com/wp-content/uploads/2015/04/JS.png"  height="50">
+<img alt="React Logo" src="https://www.logolynx.com/images/logolynx/e1/e12c387bd8ebccf18a4741b4b83a6d71.png" height="50">
 
-### `npm start`
+<p>
+<img alt= "Bootstrap UI Logo" src="https://raw.githubusercontent.com/angular-ui/angular-ui.github.com/master/logo/UI_Shield_Bootstrap.png" height="50">
+ </p>
+<img alt="CSS Logo" src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"  height="50">
+<img alt="MongoDB Logo"  src="https://cdn.app.compendium.com/uploads/user/e7c690e8-6ff9-102a-ac6d-e4aebca50425/f4a5b21d-66fa-4885-92bf-c4e81c06d916/Image/e5eee315a17de0d7f56117077eb71fa9/mongo.png" height="65">
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+ ### Transactions Page: ###
+  <img alt="Transactions Page" src="https://i.postimg.cc/52t5Ry5B/Transactions.png" height="400"> 
+In this page you will be able to see all of the transactions you inserted. Deposits will appear in green, while withdraws will appear in red.
+ 
+  ### Ctegories Page: ###
+   <img alt="Categories1 Page" src="https://i.postimg.cc/XvL8BB0m/Categories1.png" height="400"> 
+   <img alt="Categories2 Page" src="https://i.postimg.cc/631fYsqh/Categories2.png" height="400"> 
 
-### `npm test`
+ Here you will be able to see your transactions ordered by categories. In this table, positive sum will appear green, while negative sum will appear red.
+ the two images show the change in the sum of 'Food' category after a withdraw operation.
+ 
+ ### Operations Page: ###
+  <img alt="Operations Page" src="https://i.postimg.cc/k5W5TW5Y/Operations.png" height="400"> 
+ in this page you will be able to add a new transactions to your app. 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+---------------------
+- :arrow_forward: To start the app, open three different terminals and run:
+1.  `mongod`
+2.  `node server.js`
+3.  `npm start`
+---------------------
+- :memo: Future features and to-dos:
+ - [ ] add a page that details transactions by each category. (on-click on a row in 'Categories' page) 
+ - [ ] deploy to Heroku.
+ - [ ] add users authintication.
+ - [ ] add snackbars (for saving and deleting Transactions)
