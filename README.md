@@ -4,7 +4,7 @@ A self- inserted transactions app. This app will allow you to track exactly the 
 
 ________________________________________________________________
 - :computer:The Technologies I used for this project:
-<img alt="JS Logo" src="https://www.vitoshacademy.com/wp-content/uploads/2015/04/JS.png"  height="50">
+<img alt="JS Logo" src="https://www.vitoshacademy.com/wp-content/uploads/2015/04/JS.png" height="50">
 <img alt="React Logo" src="https://www.logolynx.com/images/logolynx/e1/e12c387bd8ebccf18a4741b4b83a6d71.png" height="50">
 
 <p>
@@ -17,6 +17,7 @@ ________________________________________________________________
  ### Transactions Page: ###
   <img alt="Transactions Page" src="https://i.postimg.cc/52t5Ry5B/Transactions.png" height="400"> 
 In this page you will be able to see all of the transactions you inserted. Deposits will appear in green, while withdraws will appear in red.
+You can see your balance in every page in the app. When your balace will be low (under $500), its color will change to red.
  
   ### Ctegories Page: ###
    <img alt="Categories1 Page" src="https://i.postimg.cc/XvL8BB0m/Categories1.png" height="400"> 
